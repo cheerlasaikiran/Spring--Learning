@@ -1,0 +1,35 @@
+Maven (mvn -v) (pwd present working directory)
+** GroupId who owns the project and artifactId what is the project name
+
+To understand what is build part we need to to undertsand the java application, it has 3 parts code(writing code),bytecode/unittest/jarwarfile build (build part),deployment.
+To automate that build part we are using maven, maven can helpful in getting external libraries i.e, jar(spring/jdbc) and dependencies the code written by another person.
+If we want to manage the above entire process automatically then we need to use Maven.
+1. Maven is free and open source automation build tool developed by apache.
+2. It is used to automate the build process of Java Projects, including tasks such as compiling code, managing dependencies, testing and deployment.
+3. It gives us a proper project folder structure which is easy to maintain the application. It can download and manage required dependencies/libraries automatically.
+4*.In order to deploy our application we need to package our code into jar/war file.Maven will add those jar/file in specific build path.
+	If it is standalone application/ If we are writng our code as library which can be used by others then Jar file. If it is web application which needs to deploy on servers then war file.
+5. Maven can download and manage required dependencies and libraries automatically, it executes the test cases using framework like Junit and compiles the source code and builds jar/war file then deploy.
+6. mvn archetype:generate (archetype is a template that defines the stucture of a Maven project) -DgroupdId(means a package refers to a company name)=com.sai -DartificatId(artifact means name of the project)=sai-app =>Here -D means specifying it is a parameter.
+   -SarchetypeArtificatId(type of the project):quickstart specifying we need simple standalone project)=maven-archetype-quickstart(if not quick start(jar) then webapp for war file) -DinteractiveMode(don't ask about any parameters while creating project I already mentioned them just check previous commands)=false
+7. For jar: mvn archetype:generate -DgroupId=com.cheerla -DartifactId=cheerla-app -DarchetypeArtifactId=maven-archetype-quickstart -DarchetypeVersion=1.0 -DinteractiveMode=false
+8. POM is the maven configuration file it is used to communicate with the maven it acts like bridge.
+9. Maven Dependencies: external libraries/modules required for project development(spring/hibernate), this needs our project to compile and run properly.
+10. Maven Goals: Used to perform specic steps in Maven build lifecycle (clean,compile,test,package,deploy)
+11. Maven Repositories: storage locations for Maven dependencies(Central Repository: Official online repo Local Repository: our local machine Remote Repository:Company or Third party server)
+    first pom.xpml searches the dependecy in the local repositry if its not there it will download from central repositry into local repositry and that can be used by pom. thing to remember it will store permanently in local repositry so need not to go to central repo every time.
+	Central Repository: Maven's official public repositry where it contains millions of open source libraries. If it's not in our local repo maven looks here.
+	Local Repository: this is .m2/repositry folder in our local computer machine. every downloaded repos/ dependencies are stored here.
+	Remote Repository: These are maintained by a company it's like private jar/library file if we ownly created by library adn it can be used in future. Here in remote repo we mantain artifacts nothing but jar/war files. These private internal repo created using tools like JFrog and also maintained by them.
+12. When we hit mvn compile command it will create a target folder which contains our bytecode which generates after compiling
+13. After hitting mvn compile code it will create target folder which has the byte code java class file if we want to remove the target folder we need to hit mvn clean command.
+14. If we hit mvn test it will compile the code and as well as it will execute the unit test cases if there are any and also report of that test cases is added to the target directory.
+15. mvn package command it will compile and it will execute the test cases and it will make jar/war file to clear or undo the whole process we done here we need to hit mvn clean package command
+16. For war: mvn archetype:generate -DgroupId=com.cheerla -DartifactId=cheerla-app -DarchetypeArtifactId=maven-archetype-webapp -DarchetypeVersion=1.0 -DinteractiveMode=false
+17. POM.XML:Project Object Model:It is a configuration file where we communcate with maven for what maven want to do for us.Starts with root tag <Project> everything will be written inside this.
+    inside we specify name, version of the project, dependencies, plugins: plugins will tell how the project should be build like in that we mention which franework needs to be used and which java compiler need to be used. whenever we write plugins we need to write them in build tag. 
+	If we dont want to change plugin everytime we can write that particular part outside of the buildpart using properties tag and we can use that as parameter inside plugins.
+	In IDE's when we create a maven project a effective pom i.e, parent pom file created which has lot of dependencies and plugins in our pom file even we dont mention some of the important dependencies are already in the parent file which can be used.
+18. Maven Build Life Cycle: There are 3 different build cycles: default(main lifecycle for building application), clean (cleaning the target file),sit (for generating documentation)
+	default: validate -> compile -> test -> package -> verify -> install -> deploy
+	

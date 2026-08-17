@@ -1,0 +1,54 @@
+1. Git is a distributed version control system(vcs).
+2. Version Control: version is like update.It is like if we have one file and we do some updates on it like adding new features to it but it's not working
+   then we can go back to the previous version at any point of time.
+3. Version Control System: If we want to work with other people to like to collaborate we need version control system.It can be categorized into 3 parts.
+   a.Local Version Control: copies of a folder of different versions/updates. 2 problems using this:we can't collaborate, if system fails everything is gone.
+   b.Centralized VCS: maintaining a central repository and evryone is working on that pulling it and making changes and updating the central repo everytime.
+     advantage: everyone has access problem: if central repo not works then gone. here we have the copy but we don't have the previous copies.
+   c.Distributed VCS: Here we have the copy and also entire history of what changes has made and we can collaborate with team members.
+4. So basically, git is distributed which means we have a local copy and remote copy as well
+5. git config: to tell git who we are by providing atleast 2 things like username and email
+6. git config --global --list: if we want to know the what are existing variables we have
+7. to set the values: git config --global user.name "sai" and git config --global user.email "sai@gmail.com" now to check them git config --global --list
+8. there are two things one is working directory which is a folder we are working on and other is staging area un this like out of 10 files we want git track 
+   the progress of 5 files like in staging area we tell git please take care of these 5 files other files you can ignore it.
+9. Commit History: Every time we commit we are creating a new version of it. 
+10. So the first thing is to push our working directory into staging.
+11.** There is a difference between a repository and working directory (local machine) to make it remote repository first wee need to convert our working directory into local repository and then converting it into remote repository using github/gitlab
+12. git status: everytime we need to do something we first need to do this
+13. git init: to create local repository
+14. by default it will be on master to get outside of that git init -b main now the repo will be on main branch not on master.: It creates a new branch and sets the initial branch name as main.
+15. git add filename:if we create any file in working directory and then check git status it tells untracked files to get handle this file by the git we need to commit it.
+    For that first we need it to add in to the staging so git add filename 
+16. git rm --cached filename: to unstage the file 
+17. git log: to check all the commits
+18. git commit -m "my first commit": to get it tracked by the git we are adding this file to staging.
+19. Every time we make changes we need to to add that file into staging first by using git add cmd and then only we need to commit.
+20. git commit -a -m "my first commit":if we want to skip the staging part and directly commit we can use this cmd.
+21. (working directory)git diff : to check what all changes have made in the file.
+22. (staging) git diff --staged: after adding it to stage to see the difference from the staging side.
+23. git add . : to add all files into the staging at one time.
+24. git rm --cached filename: to remove a file first we need to remove that in the stagingthen it becomes untracked by git then we can remove from the working directory and then git commit.
+25. Remote Repository: nothing but creating a repo other than local machine i.e, in github/gitlab where we can collaborate with others till now we only saw in local machine now it expanded to remote.
+26. git clone link: to get a copy of a repository go to github cick on code and copy https link.
+27. we use git init to create local repo to create remote repo click new repo in github.
+28. create folder using mkdir foldername then cd foldername then now we want create any one file and we need to push that into remote from local.
+29. echo '#message' >> README.md  echo is a command which will echo the message into the readme file, md stands for mark down it used to look good whatever we write in the readme file.
+30. Now we need to create local repo using git init command, then we need to stage it using git add filename and commit it using git commit -m "msg"
+31. We are on master branch so using git branch -M main we are creating new branch.
+32. Now we need to connect local repository to remote repository, it has 2 ways: using https or using ssh.
+33. Using ssh we need to get the key and paset it in our profile setting ssh section then it can't ask everytime we push that who we are it just 	 checks the key and recognizes and allows instantly. For https it asks for login to verify who you are then only it allows you to push.
+34. To generate ssh key use ssh-keygen -o for one machine we need to do it only once. A ssh key will be created to get that key use command cd .ssh then cat id_rsa.pub a key will be displayed.
+35. Now go back to cd filename and check git status once. Then hit this command git remote add origin sshlink this will connect local and remote repository, then hit command git push -u origin main it will push all local files from local repo to remote repo.
+36. git commit will save the files in the local repo to save it in the remote repo we need to use git push origin main command .
+37. git remote -v: to see what is our origin. origin is the by default name for the repo link.
+38. Tagging(git tag): It is the version of the IDE .Like if we think a software is ready for deploy after like 10-15 commits then for the release commit we give a version number to it that is called tag.Tagging is of 2 types annotated(it has lot of information about commits) and lightweight.
+39. Annotated tag: git tag -a v1.0 -m "1st release". to get detailed infromation of this tag hit command: git show v1.0 now they are in local repo only we need to push these tags to remote repo using command git push origin v1.0
+40. for a cloned project: after cloning using git clone https link. if we want to push it to our repo:we need to git add path. that path is we get after hitting git status. then git commit - "msg".
+41. If we want experiment something with the perfectly working project it would be create some problems so instead of that we can create a new branch and we can experiment whatever we want on this branch .
+42. git checkout -b branchname: to create a new branch and to go into that branch.
+43. git branch: to check how many branches we have
+44. git checkout/switch branchname: it will move from one branch to another.
+45. git switch -: if we want to move to to the previous branch
+46. git branch -d branchname: if we want to delete a branch.
+47. git pull origin main after that only we need to do the git merge branch name.

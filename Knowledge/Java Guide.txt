@@ -1,0 +1,28 @@
+Complete Java Guide:
+
+Confusing terms: Bit is smallest unit of data in computer. It can store only o(off) or 1(on). 1 byte = 8 bits=00000000 why 8 bits because earlier computers
+				 decided 8 bits is a good size to store a character.So, total combinations 2^8=256 i.e 0-255. So, 1 byte can store 256 different values.
+
+1. Java is more readable language just looking at the code we can understand it because it has more lines of code.
+2. Java is WORA write once read anywhere.
+3. Java is developed by sun microsystems led by james in 1995 later developed my oracle.
+4. In IDE we can write, run, compile everything it stands for Integrated development Environment.
+5. Java is platform independent because JVM understands only byte code, we write code in .java(source code) extension file when it compiles it converts that 
+   into .class(byte code) extension file which is byte code and that can be run by JVM. JRE provides external libraries. JDK provides JRE and JVM when we install it.
+6. JVM will look for one file which has main method and that file has info abouteveryfile present in that project.i.e, it looks for particular 
+   signature which has public static void main(String[] args)
+7. Java is object oriented everything in java is a object to create object we need class.
+8. Instead of storing data in database which is permanent we create variables which is temporary. Variable has a name and value.
+9. Java is Strongly typed language so we need to mention type of data we are using when creating a variable.
+10. 2 types of data primitive and non primitive. 
+11. Primitive means in java there are lot of inbuild data types. It is basic and simple easy to work with.Integer(byte,short,long,int), Float(double,float), Boolean, Character.
+12. Integer: byte - 1 byte 8 bits: short-2 bytes 16 bits: int - 4 bytes 32 bits: long 8 bytes 64 bits.
+13. Float: float-4 bytes 32 bits: double 8 bytes 64 bits double is default in java because it has not particular precision(after decimal point particular numbers) unlike float.
+    for float we need to explicitly mention while declaring eg: float num=5.6f; for double it's not required.
+14. Character char:2 bytes Java follows unicode which supports every language instead of ascii(1 byte) which supports only english A-65 a-97
+15. Boolean: boolean b=true/false
+16. type Conversion: we can't assign an integer to byte beacuse we can loose data but we can assign a byte to an integer i.e implicit conversion.
+	we can do explicit conversion i.e called casting . eg byte b=(byte) a which is an integer.
+17. Type promotion: it will promote the data type eg: byte a=10, b=20 int a=a*b; it automatically converts.
+18. post increment: num++ fetch and increment:int n=1 int result=n++ print(result)=1 pre increment: increment and fetch:int n=1 int result=++n print(result)=2
+19. 
