@@ -52,3 +52,27 @@
 45. git switch -: if we want to move to to the previous branch
 46. git branch -d branchname: if we want to delete a branch.
 47. git pull origin main after that only we need to do the git merge branch name.
+48.Here comes the main points when we want to work on a completely new repo frst we need to create it in the git repo website.
+   Then follow these commands:
+      echo "# Spring--Learning" >> README.md
+      git init
+      git add README.md
+      git commit -m "first commit"
+      git branch -M main
+      git remote add origin https://github.com/cheerlasaikiran/Spring--Learning.git(her a point to add if it shows remote origin already exists because if work in the same directory as previous repo it occurs to renitialize it use git remote set-url origin link)
+      git push -u origin main
+49. If we want push for the second time i.e already git repo is connected use the below comments:
+      git status
+      git add .
+      git commit -m "Added Spring Notes"
+      git push
+50. If we want to pull the project for fisrt time into outr local machine use these commands:
+      Go to the location where you want the project using cd "the folder path"
+      git clone https://github.com/company/project.git
+      Move into the project folder using cd "folder name"
+      Check branch using git branch
+      Check repository status using gits status
+51. The above is for if we are pulling for the frst that is why have used git clone because it is the first time
+    if we want to pull the latest changes into the existing project we need to use the below commands
+    You are already inside the project:cd Spring--Learning
+    Get latest changes:git pull or git pull origin main
