@@ -3,6 +3,32 @@ Complete Java Guide:
 Confusing terms: Bit is smallest unit of data in computer. It can store only o(off) or 1(on). 1 byte = 8 bits=00000000 why 8 bits because earlier computers
 				 decided 8 bits is a good size to store a character.So, total combinations 2^8=256 i.e 0-255. So, 1 byte can store 256 different values.
 
+The bigger pictur why java is WORA for that Java follows the WORA (Write Once Run Anywhere) principle. We write code in a .java file. The javac compiler converts 
+the source code into bytecode stored in a .class file. This bytecode is platform independent. The JVM on each operating system converts the bytecode into machine-specific 
+instructions and executes it. The JDK contains development tools such as javac, while the JRE contains the JVM and Java runtime libraries required to run Java applications.
+To compile javac filename.java and to run java filename 
+
+Clarification on bits and bytes. 1 bit is either 0 or 1. 1 byte is 8 bits. why specifically 8 bits ?Computer engineers long ago found that 8 bits provided a good balance between 
+storage, performance, and representation of characters. 1 bit has 2 possibilites either 0 or 1 for 8 bits 2*2*2*2*2*2*2*2 2 power 8 possbilities
+256 possibilities 0-255 those 256 numbers mapped to different type of values. each data types ha specidfic number of bytes because of efficient storage
+usage. If we assign 25 to integer lot of memory will be wates instead we can assign that to a byte.
+Easy Formula for n bits Range:
+-2^(n-1) to 2^(n-1) - 1
+For byte 8 bits 2*8 -128 to 127 /\ short 2 bytes 16 bits 2*16 -2^15 to 2^15 - 1 = -32,768 to 32,767
+int 4 bytes 32 bits -2^31 to 2^31 - 1 /\ long 8 bytes 64 bits 2*64 -2^63 to 2^63 - 1
+char is 2 bytes 16 bits 0 to 2^16 - 1 Because char stores characters, not signed numbers.
+Boolean can store only true or false. Java specification does not define its exact memory size.
+float 4 bytes 32 bits But float does not store numbers like int. It uses IEEE 754 floating point format. So range is ±3.4 × 10^38.
+doublt 8 bytes 64 bits ±1.7 × 10^308
+byte   -> 1 byte                 natural 1,2,3, whole 0,1,2,3,  Integer -2,-1,0,1,2 , rational simple fraction 2/4 decimals that stop or repeat
+short  -> 2 bytes                irrational not simple fraction and decimals go on forever without repeating like pi or square root of 2.
+int    -> 4 bytes                composite number numbers grather than 1 and has more than 2 factors.
+long   -> 8 bytes
+float  -> 4 bytes
+double -> 8 bytes
+char   -> 2 bytes
+boolean -> true/false
+
 1. Java is more readable language just looking at the code we can understand it because it has more lines of code.
 2. Java is WORA write once read anywhere.
 3. Java is developed by sun microsystems led by james in 1995 later developed my oracle.
