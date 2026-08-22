@@ -66,7 +66,7 @@
       git add .
       git commit -m "Added Spring Notes"
       git push
-50. If we want to pull the project for fisrt time into outr local machine use these commands:
+50. If we want to pull the project for fisrt time into our local machine that is a complete new machine use these commands:
       Go to the location where you want the project using cd "the folder path"
       git clone https://github.com/company/project.git
       Move into the project folder using cd "folder name"
