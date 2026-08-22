@@ -66,6 +66,9 @@
       git add .
       git commit -m "Added Spring Notes"
       git push
+      here if we are pushing for the second time but from a completely different machine frst we need to clone the repo then try to commit
+      it will ask for git config --global user.name "sai" and git config --global user.email "sai@gmail.com" these will tell whats the email and what's the username that's it it does not come under authentication
+      after providing it it will redirect it into github website to authenticate after successful authentication we can able to push it.
 50. If we want to pull the project for fisrt time into our local machine that is a complete new machine use these commands:
       Go to the location where you want the project using cd "the folder path"
       git clone https://github.com/company/project.git
@@ -76,3 +79,8 @@
     if we want to pull the latest changes into the existing project we need to use the below commands
     You are already inside the project:cd Spring--Learning
     Get latest changes:git pull or git pull origin main
+52. If the repo that we are cloning is public repo then there is no authentication required like for open frameworks and for private repos
+    it does require authentication.
+53. When we push into someones repository they need to prvide access to their repo by adding our username or our github profile.
+54. git init Usually when you have a normal folder/project that isn't a Git repository yet and you want to start tracking it.Then, if you 
+    want to connect this local repository to a GitHub repository: git remote add origin link 
